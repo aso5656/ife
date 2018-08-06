@@ -164,6 +164,7 @@ li{
 /* section-a */
 .section-a{
     max-width: 1600px;
+    margin: 0 auto;
     height: 100vh;
     background: url(../images/bg2.png);
     background-size: cover;
