@@ -32,7 +32,7 @@ li{
 #showcase .welcome {
     box-sizing: border-box;
      max-width: 900px;
-     padding:  0 150px 50px 150px;
+     padding:  50px 150px 50px 150px;
 }
 
 #showcase .welcome h1{
@@ -107,7 +107,7 @@ li{
     max-width: 900px;
     padding: 70px 0;
     margin:0 auto;
-    display: grid;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -564,4 +564,208 @@ footer .box4 ul li a:hover{
     
 }
 
+
+@media(max-width: 950px){
+
+        /* header */
+#showcase .welcome{
+    padding:  5vw 5vw 10vw 5vw;
+}        
+
+#showcase .welcome h1{
+    font-size: 10vw;
+    padding-bottom: 10vw;
+}
+
+#showcase .signup{
+    border: none;
+    border-top: 1px solid #555250;
+    padding: 50px 1vw;
+}
+
+#showcase .signup form input{
+    width: 70vw;
+    margin: 3vw auto;
+}
+
+#showcase .signup form a.button{
+    display: block;
+    width: 25vw;
+    padding: 0px 2vw;
+    margin: 2vw auto 0 auto;
+}
+
+/* banner */
+#banner{
+    padding: 0 1vw;
+    height: 100vh;
+}
+
+#banner h2{
+    font-size: 6vw;
+    padding: 10vw 5vw;
+}
+
+#banner .features {
+    text-align: center;
+}
+
+#banner .features .feature-box{
+    padding: 0;
+}
+
+#banner .features .feature-box .icon{
+    padding: 3vw;
+}
+
+
+/* section-a */
+.section-a .left h2{
+    line-height: 0.9;
+    font-size:7vw;
+}
+
+.section-a .left p{
+    font-size: 1rem;
+}
+
+.section-a .left a {
+    width: 55vw;
+    font-size: 3vw;
+}
+
+/* product*/
+
+
+.product .inner{
+    padding: 10vw 5vw;
+}
+
+.product .inner h1{
+    font-size: 7vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    text-shadow: 3px 1px 5px #5a5a5a;
+}
+
+
+.product .wrapper{
+    flex-direction: column;
+    padding-top: 5vw;
+}
+
+.product .wrapper .box{
+    padding-bottom: 5vw;
+}
+.product .wrapper .box p{
+    font-size: 4vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+/* section-b  */
+
+.section-b .inner{
+    padding:10vw 0;
+}
+
+.section-b .inner .img1-text, .section-b .inner .img2-text{
+   grid-column: 1/4;
+   z-index: 1;
+}
+.section-b .inner .img-1,.section-b .inner .img-2{
+    grid-column: 1/4;
+}
+
+.section-b .inner .img1-text h2, .section-b .inner .img2-text h2{
+    color: #ffffffd0;
+    font-size: 5vw;
+    font-weight: bold;
+    padding: 0 8vw;
+}
+.section-b .inner .img1-text p, .section-b .inner .img2-text p{
+    color: #c5c1c1cb;
+    padding: 5vw 8vw;
+}
+
+/* Crew */
+
+.crew .inner{
+    padding: 10vw 2vw;
+}
+
+.crew h2{
+    font-size: 8vw;
+    padding: 1vw 2vw;
+}
+.crew p{
+    padding: 5vw 3vw;
+
+}
+.crew .inner .crew-member {
+    grid-auto-rows: 60vw;
+    grid-gap: 3vw;
+    justify-content: space-around;
+    
+}
+.crew .inner .crew-member .member{
+    grid-column: 1/3;
+    width: 100%;
+}
+
+/* section-c */
+.section-c .inner{
+    padding: 10vw 2vw;
+}
+
+.section-c .inner .feedback{
+    grid-column: 1/3;
+    border: none;
+    padding-top: 0;
+}
+
+.section-c .inner .contact-info{
+    grid-column: 1/3;
+    border-top: 1px solid #555250;
+    padding-top: 10vw;
+
+}
+.section-c .inner .contact-info p span{
+    font-size: 4vw;
+
+}
+
+/* footer */
+footer{
+    grid-template-columns: 40% 40%;
+    padding: 10vw 2vw;
+    height: 100vh;
+    box-sizing: border-box;
+    justify-items: left;
+    justify-content: space-evenly;
+    
+}
+
+footer .box{
+    padding: 0;
+}
+
+footer .box h4{
+
+}
+
+footer .box ul li a {
+    padding:2vw 0;
+}
+
+footer .box4 p{
+    padding: 2vw 0;
+    width: 80%;
+
+}
+
+footer .box4 ul li a {
+    padding-right: 1vw;
+}
+}
 
