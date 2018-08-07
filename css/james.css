@@ -344,7 +344,7 @@ li{
 
 .crew h2{
     text-align: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 2.5rem;
     font-weight: normal;
     letter-spacing: 0.05em;
@@ -396,7 +396,7 @@ li{
 .crew-member .member:hover .member-info{
     width: 100%;
     height: 100%;
-    background: #4e4e4ea2;
+    background: rgba(78, 78, 78, 0.635);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -410,7 +410,7 @@ li{
     font-size: 1.5rem;
 }
 .crew-member .member:hover .member-info h5{
-    color: #acaaa9d5;
+    color: rgba(172, 170, 169, 0.835);
     font-weight: normal;
     padding: 15px 0;
 }
@@ -425,7 +425,7 @@ li{
     color: #fff;
     padding: 0.5rem 0.7rem;
     margin-right: 15px;
-    border: #bbbabadc 2px solid;
+    border: rgba(187, 186, 186, 0.863) 2px solid;
     border-radius: 15em;
 }
 
@@ -447,7 +447,7 @@ li{
 }
 
 .section-c .inner .feedback{
-    border: 1px solid #807f7f7e;
+    border: 1px solid rgba(128, 127, 127, 0.494);
     border-radius: 10px;
     text-align: center;
     padding: 35px 10px;
@@ -574,7 +574,7 @@ footer .box4 ul li a:hover{
 
 #showcase .welcome h1{
     font-size: 10vw;
-    padding-bottom: 10vw;
+    padding: 8vw 0 2vw 0;
 }
 
 #showcase .signup{
@@ -678,13 +678,13 @@ footer .box4 ul li a:hover{
 }
 
 .section-b .inner .img1-text h2, .section-b .inner .img2-text h2{
-    color: #ffffffd0;
+    color: rgba(255, 255, 255, 0.816);
     font-size: 5vw;
     font-weight: bold;
     padding: 0 8vw;
 }
 .section-b .inner .img1-text p, .section-b .inner .img2-text p{
-    color: #c5c1c1cb;
+    color: rgba(197, 193, 193, 0.796);
     padding: 5vw 8vw;
 }
 
