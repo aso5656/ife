@@ -739,7 +739,7 @@ footer .box4 ul li a:hover{
 footer{
     grid-template-columns: 40% 40%;
     padding: 10vw 2vw;
-    height: 70vh;
+    
     box-sizing: border-box;
     justify-items: left;
     justify-content: space-evenly;
