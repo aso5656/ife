@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url(http://fonts.font.im/css?family=Lobster);
 
 body {
-    font-family: 'Roboto' sans-serif;
+    font-family: 'Lobster', sans-serif;
     background: url(../images/mountain.jpg) center center fixed;
     background-size: cover;
 }
@@ -52,9 +52,8 @@ input {
     font-size: 1.2rem;
 }
 
-@media(min-width:650px){
+/* @media(min-width:650px){
     .container {
         width: 540px;
-    }
+    } */
 
-}
