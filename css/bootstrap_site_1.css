@@ -1,0 +1,44 @@
+#slides .carousel-caption {
+    bottom: 15%;
+}
+#slides .carousel-caption h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 10px #666;
+}
+
+@media(max-width:768px) {
+    #slides .carousel-caption h2{
+        font-size: 3.5rem;   
+    }
+    #slides .carousel-caption h4{
+        font-size: 1rem;
+    }
+    #slides .carousel-caption button{
+        font-size: 0.8rem;
+        padding:.25rem .5rem;
+    }
+}
+
+.fa-code{
+    color: #e54d26;
+}
+.fa-bold{
+    color: #563d7c;
+}
+.fa-css3{
+    color: #2163af;
+}
+.fa-code, .fa-bold, .fa-css3 {
+    font-size: 4rem;
+    margin:1rem;
+}
+
+#emoji img{
+    max-width: 100%;
+}
+
+.social-links i{
+    font-size: 3.5rem;
+    padding: 10px 15px;
+}
