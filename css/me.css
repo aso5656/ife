@@ -1,58 +1,58 @@
-@import url(http://fonts.font.im/css?family=Ubuntu:400,500,700);
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500');
 body {
-    font-family: 'Ubuntu', sans-serif;
-    color: #fff;
+  font-family: "Ubuntu", sans-serif;
+  color: #fff;
 }
 
 h3 {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 /* nav */
 
 nav {
-    background-color: #297fb8;
-    border-bottom: 1px solid #5398c6;
+  background-color: #297fb8;
+  border-bottom: 1px solid #5398c6;
 }
 
 .navbar-expand-md .navbar-nav .nav-link {
-    padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.678);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.678);
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-    color: #297fb8;
-    background: #fff;
+  color: #297fb8;
+  background: #fff;
 }
 
 /* about section */
 #about {
-    background-color: #1fb8eb;
+  background-color: #1fb8eb;
 }
 
 /* portfolio section */
 #portfolio {
-    background-color: #ff9800;
+  background-color: #ff9800;
 }
 
 /* social section */
 
 #contact {
-    background-color: #00b2ca;
+  background-color: #00b2ca;
 }
 
 i {
-    font-size: 3rem;
-    color: #fff;
+  font-size: 3rem;
+  color: #fff;
 }
 
 /* footer */
 
 footer {
-    background-color: #671ab7;
+  background-color: #671ab7;
 }
