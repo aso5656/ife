@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transparent Login Form using Bootsrap</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+        crossorigin="anonymous">
+    <script src='https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="css/login_form.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-sm-8 py-5 text-center main">
+            <div class="col-12 pb-5 quote">
+                Click for one quote
+                <br>
+                <br>
+
+            </div>
+            <button id="getQuote" class="btn btn-success">Get Quote</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            $('#getQuote').on('click', function () {
+                $.ajax({
+                    url: "https://v1.hitokoto.cn/?encode=json",
+                    type: 'GET',
+                    dataType: 'JSONP',//here
+                    success: function (json) {
+                        $('.quote').html('<p>' + json.hitokoto + '</p>' + '<h4' + ' ' + 'class="text-right">——————' + json.from + '</h4>');
+                    }
+                })
+            })
+        });
+    </script>
+</body>
+
+</html>

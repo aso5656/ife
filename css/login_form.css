@@ -10,8 +10,8 @@ body {
   margin: 0 auto;
   margin-top: 180px;
   padding: 0;
-  background: #3b4652;
-  opacity: 0.85;
+  background: rgba(59, 70, 82, 0.192);
+  
   border-radius: 5px;
   padding: 0 20px;
 }
@@ -45,6 +45,10 @@ input {
 }
 .forgot a {
   color: #0ba9b4;
+  font-size: 1.2rem;
+}
+
+.quote {
   font-size: 1.2rem;
 }
 
