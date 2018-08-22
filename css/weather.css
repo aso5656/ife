@@ -1,5 +1,14 @@
 .list-group-item {
     font-size: 1.2rem;
-    border: 0;
-    padding: 20px 50px;
+    border: 1px solid rgba(224, 224, 224, 0.74);
+    padding: 20px 30px;
+}
+
+.list-group-flush .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    font-size: 1.3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

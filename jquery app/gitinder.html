@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.css">
+    <script src='https://cdn.bootcss.com/jquery/3.3.1/jquery.js'></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-secondary">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">
+                    <img src="images/myLogo.png" alt="">
+                </a>
+            </div>
+        </nav>
+
+    </header>
+    <main>
+        <div class="container">
+            <h1 class="display-4 text-center text-info">
+                Search github users..
+            </h1>
+            <br>
+            <div class="row">
+                <div class="col-md-10 col-lg-6 mx-auto pb-5">
+                    <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis sapiente fugit
+                        veniam asperiores quod consectetur nesciunt. Illo dolores voluptatibus fuga facilis. Aspernatur reprehenderit
+                        expedita sit explicabo adipisci fugit quae accusantium, ullam inventore minus deleniti magni quidem,
+                        optio temporibus commodi alias.</p>
+                    <input type="text" id="inp" class="form-control" placeholder="type in the name!">
+                </div>
+            </div>
+            <div id="showcase"></div>
+        </div>
+    </main>
+    <!-- <footer class="bg-info">
+        <div class="container-fluid py-3">
+            <div class="navbar navbar-dark justify-content-end">
+                <a href="#" class="navbar-brand">
+                    <img src="images/myLogo.png" alt="">
+                </a>
+            </div>
+        </div>
+    </footer> -->
+
+
+    <script>
+        $(document).ready(function () {
+            $('#inp').on('keyup', function () {
+                var userURL = $('#inp').val(); //得到输入的内容
+
+                //make ajax request
+                $.ajax({
+                    url: 'https://api.github.com/users/' + userURL,
+                    data: {
+                        client_id: 'd11776b5828dff6c1e49',
+                        client_secret: 'b796b3254c656af41ff8039c65af64e93f86434d'
+                    },
+                    success: function (user_data) {
+                        $('#showcase').html(`
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title m-0">${user_data.name}</h5>
+                            <p class=" mb-0">${user_data.login}</p>
+                            <hr>
+                            <div class='row'>
+                                <div class='col-md-3'>
+                                    <img class='w-100' src="${user_data.avatar_url}">
+                                    <a type=''button' class='btn btn-block btn-sm btn-outline-info mt-1'
+                                    target="_blank" href="${user_data.html_url}">
+                                        View Profile</a>
+                                </div> 
+                                <div class='col-md-9'> 
+                                    <span class="badge badge-secondary">following: ${user_data.following}</span>
+                                    <span class="badge badge-success">Public Gist: ${user_data.public_gists}</span>
+                                    <span class="badge badge-danger">followers: ${user_data.followers}</span>
+                                    <span class="badge badge-warning">Public Repos: ${user_data.public_repos}</span>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Email:${user_data.public_email}</li>
+                                        <li class="list-group-item">Blog:${user_data.blog}</li>
+                                        <li class="list-group-item">Location:${user_data.location}</li>
+                                    </ul>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-center text-secondary my-2">Latest Repos</h3>
+                    <div id="repos" class='py-4'>
+                    
+                    </div>
+                   `)
+                   $.ajax({
+                    url: 'https://api.github.com/users/' + userURL+'/repos',
+                    data: {
+                        client_id: 'd11776b5828dff6c1e49',
+                        client_secret: 'b796b3254c656af41ff8039c65af64e93f86434d',
+                        sort:'created:asc',
+                        per_page:5
+                        },
+                    success:function (repos){
+                        $.each(repos,function(index,obj){
+                            $('#repos').append(`
+                            <div class="row py-2">
+                                <div class="col-md-7">
+                                    <span class="text-primary">${obj.name}:</span>
+                                    <i>${obj.description}</i>
+                                </div>
+                                <div class="col-md-3">
+                                    <span class="badge badge-secondary">following: ${obj.forks_count}</span>
+                                    <span class="badge badge-success">Public Gist: ${obj.stargazers_count}</span>
+                                    <span class="badge badge-danger">forks: ${obj.forks}</span>
+                                    <span class="badge badge-warning">Public Repos: ${obj.open_issues}</span>
+                                </div>
+                                <div class="col-md-2 d-flex justify-content-end align-items-center">
+                                    <a href="${obj.html_url}" target="_blank" class='btn btn btn-info'>Detail</a>
+                                </div>
+                            </div>
+                            
+                            `);
+                        })
+                    }
+                });
+                    
+                }
+            })
+        })
+    })
+    </script>
+</body>
+
+</html>
