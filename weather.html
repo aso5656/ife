@@ -30,7 +30,6 @@
                 </div>
                 <div class="col-12 py-4">
                     <ul class="list-group w-50 mx-auto">
-
                         <li class="list-group-item"><span class="week"></span></li>
                         <li class="list-group-item">温度：<span class="temp"></span> </li>
                         <li class="list-group-item">天气：<span class="weather"></span></li>
@@ -38,18 +37,36 @@
 
                     </ul>
                 </div>
-                <div class="col-6 d-flex justify-content-around">
+                <div class="col-8 btn-group d-flex justify-content-center">
                     <button id='getTodayWeather' class="btn btn-sm btn-outline-primary">today's weather</button>
                     <button id='getTmrWeather' class="btn btn-sm btn-outline-success">tmr's weather</button>
                     <button id='getTmrTmrWeather' class="btn btn-sm btn-outline-info">tmr's tmr's weather</button>
+
+                </div>
+
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-7 input-group">
+                    <input type="text" id="inp" class="form-control" placeholder="写下你要做的事">
+                    <div class="input-group-append">
+                        <button class="btn btn-info" type="button" id="searchBtn">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-2 justify-content-center">
+                <div class="col-8 ">
+                    <ul class="list-group list-group-flush">
+
+                    </ul>
+                    <br><br>
                 </div>
             </div>
         </div>
         </div>
     </main>
-    <footer>
-        <div class="container-fluid">
-            <div class="navbar navbar-dark bg-info fixed-bottom justify-content-end">
+    <footer class="bg-info">
+        <div class="container-fluid py-3">
+            <div class="navbar navbar-dark justify-content-end">
                 <a href="#" class="navbar-brand">
                     <img src="images/myLogo.png" alt="">
                 </a>
@@ -58,43 +75,69 @@
     </footer>
 
     <script>
-        var i = 0;
-        var heading = $('.display-4');
         $(document).ready(
-            GetJson() 
+            GetJson()
         );//默认今天天气
-
-        $('#getTodayWeather').on('click',function(){
-            i = 0;
-            GetJson();
-        });
-        $('#getTmrWeather').on('click',function(){
-            i = 1;
-            GetJson();
-        });
-        $('#getTmrTmrWeather').on('click',function(){
-            i = 2;
-            GetJson();
-        });
 
         function GetJson() {
             $.ajax({
                 url: "http://v.juhe.cn/weather/index?format=2&cityname=252&key=5b51a178714e52e7fe17033123a42e47",
                 type: 'GET',
                 dataType: 'JSONP',
-                success:function(json){ 
-                    WriteWeather(json)}
+                success: function (json) {
+
+                    var today = json.result.future[0];
+                    var tmr = json.result.future[1];
+                    var tmrtmr = json.result.future[2];
+                    
+                    $('#getTodayWeather').on('click', function () { 
+                        WriteWeather(today);
+                    });
+                    $('#getTmrWeather').on('click', function () {
+                        WriteWeather(tmr);
+                    });
+                    $('#getTmrTmrWeather').on('click', function () {
+                        WriteWeather(tmrtmr);
+                    });
+                    WriteWeather(today)
+                }
             })
 
         };
 
-        function WriteWeather(data) {
-            var date = data.result.future[i];
+        function WriteWeather(date) {
             $('.week').html(date.week);
             $('.temp').html(date.temperature);
             $('.weather').html(date.weather);
             $('.wind').html(date.wind);
         }
+
+        // to do list js code
+        $('#searchBtn').on('click', function () {
+            var inputTxt = $('#inp').val();
+            $('.list-group-flush').append(`
+        <li class=\" list-group-item  text-secondary\">  
+            <div class='to-do-text'>${inputTxt}</div>
+            <div class='btn-group'> 
+                <button class="del btn btn-sm btn-outline-danger" >Delete</button>
+                <button class="impor btn btn-sm btn-outline-success">Important</button>    
+            </div>
+        </li>
+        `)
+            $('#inp').val('');//清空输入栏
+
+            $('.del').on('click', function () {
+                $(this).parents('li').remove();//找到第一个包住$(this)的dom，如这个dom是li则返回他的对象，
+            });
+
+            $('.impor').on('click', function () {
+                $(this).parents('li').find('.to-do-text').addClass('text-danger');
+            })
+        }
+
+
+        )
+
 
     </script>
 
